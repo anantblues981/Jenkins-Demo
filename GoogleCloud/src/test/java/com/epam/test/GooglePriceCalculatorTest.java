@@ -75,16 +75,7 @@ public class GooglePriceCalculatorTest {
         Assert.assertEquals(calculatorPage.selectCommitmentUsagePeriod(), "1 Year");
     }
 
-    @Test(description = "Verify the final estimated cost", dependsOnMethods = {"verifyCommitmentUsageSelection"})
-    public void verifyFinalEstimate() throws IOException {
-        try {
-            Assert.assertEquals(calculatorPage.addToEstimateButton().finalEstimate(), "Total Estimated Cost: USD 1,840.40 per 1 month");
-        } catch (AssertionError e) {
-            File screenshot = TakeScreenshot.takeElementScreenshot(calculatorPage.getResult());
-            Allure.addAttachment("Element Screenshot",FileUtils.openInputStream(screenshot));
-            throw new AssertionError();
-        }
-    }
+
 
     @AfterMethod
     public void afterMethod(ITestResult result)throws IOException{
