@@ -19,6 +19,7 @@ public class GooglePriceCalculatorTest {
     GooglePriceCalculator calculatorPage;
 
     @BeforeClass
+    @Parameters({"browser"})
     public void setUp(@Optional("chrome") String browser) {
         webDriver = ThreadWebDriver.getInstance(browser);
         calculatorPage = new GooglePriceCalculator(webDriver);
