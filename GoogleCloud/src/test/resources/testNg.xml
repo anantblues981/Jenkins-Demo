@@ -3,9 +3,9 @@
 <suite name="Selenium" parallel="classes" thread-count="2">
 <parameter name="browser" value="chrome"></parameter>
     <test name="ChromeTest">
-        <packages>
-            <package name="com.epam.test"/>
-        </packages>
+               <classes>
+            <class name="com.epam.test.GooglePriceCalculatorTest"></class>
+        </classes>
     </test>
 
 
